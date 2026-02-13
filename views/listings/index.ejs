@@ -16,10 +16,16 @@
             margin-right: 2rem;
             margin-top: 2rem;
             opacity: 0.7;
+            text-decoration: none;
+            color: inherit;
         }
         .filter:hover{
             opacity: 1;
             cursor: pointer;
+        }
+        .active-filter {
+            opacity: 1;
+            border-bottom: 2px solid black;
         }
         .tax-info {
             display: none;
@@ -35,46 +41,29 @@
         }
     </style>
     <div id="filters">
-        <div class="filter">
-            <div><i class="fa-solid fa-fire"></i></div>
-            <p>Trending</p>
-        </div>
-        <div class="filter">
-            <div><i class="fa-solid fa-bed"></i></div>
-            <p>Rooms</p>
-        </div>
-        <div class="filter">
-            <div><i class="fa-solid fa-mountain-city"></i></div>
-            <p>Iconic Cities</p>
-        </div>
-        <div class="filter">
-            <div><i class="fa-solid fa-mountain"></i></div>
-            <p>Mountains</p>
-        </div>
-        <div class="filter">
-            <div><i class="fa-solid fa-chess-rook"></i></div>
-            <p>Castles</p>
-        </div>
-        <div class="filter">
-            <div><i class="fa-solid fa-person-swimming"></i></div>
-            <p>Amazing Pools</p>
-        </div>
-        <div class="filter">
-            <div><i class="fa-solid fa-campground"></i></div>
-            <p>Camping</p>
-        </div>
-        <div class="filter">
-            <div><i class="fa-solid fa-cow"></i></div>
-            <p>Farms</p>
-        </div>
-        <div class="filter">
-            <div><i class="fa-solid fa-snowflake"></i></div>
-            <p>Arctic</p>
-        </div>
-         <div class="filter">
-            <div><i class="fa-solid fa-ship"></i></div>
-            <p>Boats</p>
-         </div>
+<div id="filters">
+        <% 
+        const filters = [
+            { name: "Trending", icon: "fa-fire" },
+            { name: "Rooms", icon: "fa-bed" },
+            { name: "Iconic Cities", icon: "fa-mountain-city" },
+            { name: "Mountains", icon: "fa-mountain" },
+            { name: "Castles", icon: "fa-chess-rook" },
+            { name: "Amazing Pools", icon: "fa-person-swimming" },
+            { name: "Camping", icon: "fa-campground" },
+            { name: "Farms", icon: "fa-cow" },
+            { name: "Arctic", icon: "fa-snowflake" },
+            { name: "Boats", icon: "fa-ship" }
+        ];
+        %>
+
+        <% for(let f of filters) { %>
+            <a href="/listings?category=<%= f.name %>" 
+               class="filter <%= currCategory === f.name ? 'active-filter' : '' %>">
+                <div><i class="fa-solid <%= f.icon %>"></i></div>
+                <p><%= f.name %></p>
+            </a>
+        <% } %>
 
         <div class="tax-toggle">
             <div class="form-check-reverse form-switch">
