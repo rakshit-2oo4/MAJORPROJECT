@@ -115,7 +115,9 @@ app.use("/", userRouter);
 //     console.log("sample was saved");
 //     res.send("successful testing");
 // });
-
+app.get("/", (req, res) => {
+  res.redirect("/listings");
+});
 app.all("*", (req, res, next) => {
     next(new ExpressError(404, "Page Not Found"));
 });
