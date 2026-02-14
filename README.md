@@ -2,7 +2,8 @@
 
 A full-featured **Airbnb clone** built using **Node.js, Express, MongoDB, EJS**, and modern web development practices. This project allows users to **register, log in, create listings, browse properties, and book stays** — all with server-rendered pages, cloud image uploads, secure authentication, and more.
 
-# 🔗 Link --> https://majorproject-n6b4.onrender.com
+---
+## 🔗 Link --> https://majorproject-n6b4.onrender.com
 
 ---
 ## 📖 Overview
